@@ -10,15 +10,14 @@
 </template>
 
 <script>
-import { ref } from 'vue'
-import data from '@/data/us-airports.js'
 
 export default {
   name: 'AirportCards',
-  setup() {
-    const airports = ref(data)
-
-    return { airports }
+  props: {
+    airports: {
+      type: Array,
+      required: true
+    }
   }
 }
 </script>
