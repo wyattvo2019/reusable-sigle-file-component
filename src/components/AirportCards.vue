@@ -1,15 +1,16 @@
 <!-- eslint-disable vue/multi-word-component-names -->
 <template>
   <div class="wrapper">
-    <div v-for="airport in airports" :key="airport.abbreviation" class="card">
+    <card v-for="airport in airports" :key="airport.abbreviation" class="card">
       <p>{{ airport.abbreviation }}</p>
       <p>{{ airport.name }}</p>
       <p>{{ airport.city }}, {{ airport.state }}</p>
-    </div>
+    </card>
   </div>
 </template>
 
 <script>
+import Card from '@/components/Card.vue'
 
 export default {
   name: 'AirportCards',
@@ -18,6 +19,9 @@ export default {
       type: Array,
       required: true
     }
+  },
+  components: {
+    Card
   }
 }
 </script>
